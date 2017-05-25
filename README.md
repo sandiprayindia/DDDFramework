@@ -14,8 +14,6 @@ UnitOfWork (implements IUnitOfWork members) - De-couples the logic to do atomic 
 
 ICommand & IQuery- Provides contracts to deal with different DB technologies viz. ADO.NET,Enterprise Library or ORMs like Entity FrameWork Code First etc and different DBs(current implementation supports mainly SQL Server - but as mentioned eralier also, can be extended to support other DB types as well).
 
-N.B.-> If one wants to think of any imaginable data source as Repository then atleast for the query side it's better to have a IQueryable provider for the same(atleast to use this framework seamlessly). For an exhaustive list of open source IQueryable providers, one can visit [Linq to Everything](https://blogs.msdn.microsoft.com/charlie/2008/02/28/link-to-everything-a-list-of-linq-providers/) (well, it's almost EVERYTHING).If some imaginable data source is not mentioned in the afore-mentioned list then one can build his/her own IQueryable provider and hopefully the articles viz. [LINQ: Building an IQueryable provider series](https://blogs.msdn.microsoft.com/mattwar/2008/11/18/linq-building-an-iqueryable-provider-series/), [Building Custom LINQ Enabled Data Providers](https://blogs.msdn.microsoft.com/tommer/2007/04/20/building-custom-linq-enabled-data-providers-using-iqueryablet/), [Creating LINQToTwitter library using LinqExtender](http://weblogs.asp.net/mehfuzh/creating-linqtotwitter-library-using-linqextender) and [Writing A Custom LINQ Provider With Re-linq](http://fairwaytech.com/2013/03/writing-a-custom-linq-provider-with-re-linq/) can be helpful in doing the same.And if anyone builds any LINQ to Something(or "Anything") provider, then please don't forget to share it with the world.
-
 Pending Tasks ->
 
 • Incorporation of some tactical DDD stuffs(mainly the common framework elements).
@@ -25,9 +23,7 @@ Pending Tasks ->
 • Incorporation of some Restful stuffs which are commonly used in most Enterprise Apps.
 
 • Whatever done till now is all Orchestrations rather than Event Driven Choreographies.Even the async await based request reply
-  mechanisms are also actually Orchestrations. True Fire and Forget Event Driven Choreographies(may be with some nominal acknowledgement   sent to the requester) following Eventually Consistent approach  WILL ALSO BE TRIED, at the Web API Layer using "Event Driven Rest"     and at the Business Layer using [Zero  MQ](http://zeromq.org/).[Zero  MQ](http://zeromq.org/) was designed from the ground up, keeping   in mind stock trading apps wherein very high throughput and very low latency are required, as discussed
-  [here](http://aosabook.org/en/zeromq.html).         
-  N.B. -> One can refer the paper - [Your Coffe Shop Doesn't use 2 phase commit](http://www.enterpriseintegrationpatterns.com/docs/IEEE_Software_Design_2PC.pdf) (written by the Integration genius - Gregor  Hohpe, co-   author of the Integration Bible viz. [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/)) to see how apps   can be implemented without using Transactional Consistency.
+  mechanisms are also actually Orchestrations. True Fire and Forget Event Driven Choreographies(may be with some nominal acknowledgement   sent to the requester) following Eventually Consistent approach  WILL ALSO BE TRIED, at the Web API Layer using "Event Driven Rest"     and at the Business Layer using [Zero  MQ](http://zeromq.org/).
 
 • Testing BulkOperations using SQL Express Edition.
 
